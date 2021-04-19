@@ -1,0 +1,40 @@
+<!DOCTYPE html>{% load static %}
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Geo API{% endblock title %}</title>
+  <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+  {% block head %}{% endblock head %}
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav class="navbar navbar--primary">
+    <div class="navbar-brand"><a href="{% url 'geo:homepage' %}">Geo</a></div>
+    <div class="navbar-nav">
+      {% block navbar %}<a class="nav-link" href="{% url 'api:docs' %}">API Docs</a>{% endblock navbar %}
+    </div>
+  </nav>
+</header>
+
+<!-- MAIN -->
+<main class="container mx-auto pt-5">
+  <noscript>
+    <div class="alert alert--error mb-8">Ce site nécessite JavaScript.</div>
+  </noscript>
+
+  {% if messages %}
+  <ul class="mb-4">
+    {% for message in messages %}
+    <li{% if message.tags %} class="alert alert--{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% block content %}{% endblock content %}
+</main>
+
+{% block javascript %}{% endblock javascript %}
+</body>
+</html>

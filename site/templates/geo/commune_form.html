@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="header1">
+  {% if instance %}Éditer "{{ instance.nom }}"{% else %}Créer une ville{% endif %}
+</h1>
+
+<form class="form" method="POST">
+  {% csrf_token %}
+  <table class="form-table">{{ form.as_table }}</table>
+
+  <div class="actions">
+    {% if instance %}
+      <input type="hidden" name="delete" value="" />
+      <button type="button" class="btn btn--default"
+              onClick="if(confirm('Êtes-vous sûr de vouloir supprimer cette ville?')) {
+                        this.previousElementSibling.value = '1'; this.form.submit() }">Supprimer</button>
+    {% endif %}
+    <button type="submit" class="btn btn--primary">Enregistrer</button>
+  </div>
+</form>
+{% endblock content %}

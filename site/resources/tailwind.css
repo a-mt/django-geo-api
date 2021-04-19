@@ -1,0 +1,152 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+/* HEADER NAVBAR */
+.navbar {
+  @apply flex items-center justify-between flex-wrap p-6;
+}
+.navbar--primary {
+  @apply bg-gray-800 text-white;
+}
+.navbar-brand {
+  @apply flex-shrink-0 mr-6 font-bold;
+}
+.navbar-nav {
+  @apply w-full flex-grow sm:flex sm:items-center sm:w-auto text-gray-400;
+}
+.nav-link:hover {
+  @apply text-white;
+}
+
+/* TITLES */
+.header1 {
+  @apply text-3xl font-extrabold text-gray-900;
+}
+.header2 {
+  @apply text-xl font-bold text-gray-900;
+}
+
+/* SEARCH FORM */
+.form {
+  @apply mt-8 mb-8 space-y-6;
+}
+.searchbar {
+  @apply relative max-w-3xl;
+}
+.searchbar-icon {
+  @apply absolute h-10 mt-1 left-0 top-0 flex items-center pl-4;
+}
+.searchbar-input {
+  @apply block w-full bg-gray-100 text-gray-500 font-bold rounded-lg pl-12 pr-4 py-3;
+}
+.searchbar-input:focus {
+  @apply outline-none bg-white shadow;
+}
+
+/* CARD */
+.card {
+  @apply bg-white rounded overflow-hidden shadow border border-gray-200 mb-4;
+}
+.card:hover {
+  @apply shadow-md;
+} 
+.card-title {
+  @apply block w-full p-3 font-bold border-b border-gray-300 border-opacity-50;
+}
+.card-description {
+  @apply px-3 py-1 text-sm bg-gray-100 text-gray-400;
+}
+.card-info {
+  @apply pr-2;
+  font-variant: small-caps;
+}
+
+.card.green {
+  @apply border-green-200;
+}
+.card-title.green {
+  @apply border-green-300 text-green-500;
+}
+.card-description.green {
+  @apply bg-green-100 text-green-400;
+}
+
+/* PAGINATION NAVBAR */
+.paging {
+  @apply grid grid-cols-5;
+}
+.paging-center {
+  @apply text-center col-span-3;
+}
+.paging-right {
+  @apply text-right;
+}
+.pag-num {
+  @apply inline-block px-2 text-gray-600;
+}
+a.pag-num:hover {
+  @apply text-black underline;
+}
+.pag-num--dots {
+  @apply px-0;
+}
+.pag-num--current {
+  @apply text-black font-bold bg-gray-100 rounded mx-2;
+}
+
+/* ALERTS */
+.alert {
+  @apply border rounded p-2;
+}
+.alert--error {
+  @apply bg-red-100 border-red-200 text-red-700;
+}
+.alert--success {
+  @apply bg-green-100 border-green-200 text-green-700;
+}
+
+/* BUTTONS */
+.btn {
+  @apply border rounded px-2 py-1;
+}
+.btn--default:hover {
+  @apply bg-gray-100;
+}
+.btn--primary {
+  @apply bg-gray-800 border-gray-800 text-white;
+}
+.btn--primary:hover {
+  @apply bg-gray-600;
+}
+
+/* FORM */
+.actions {
+  @apply text-right mt-4;
+}
+.form-table th {
+  @apply text-right pr-2;
+  vertical-align: top;
+}
+.form-table td {
+  @apply pb-4;
+}
+.form-table input,
+.form-table select {
+  @apply border px-2 py-1 h-8 rounded bg-white border-gray-200;
+}
+.form-table input:disabled {
+  @apply bg-gray-200 text-gray-500;
+}
+.form-table input:focus,
+.form-table select:focus {
+  @apply shadow-blue border-blue-400 outline-none;
+}
+.form-table .helptext {
+  @apply text-sm pl-1 text-gray-500;
+}
+.form-table .errorlist {
+  @apply text-sm pl-1 text-red-500 mt-1;
+}

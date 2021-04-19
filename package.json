@@ -1,0 +1,19 @@
+{
+  "name": "geo-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwind build site/resources/tailwind.css -o site/static/css/style.css",
+    "minify:css": "cleancss -o site/static/css/style.min.css site/static/css/style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "clean-css-cli": "^4.3.0",
+    "postcss": "^8.2.10",
+    "tailwindcss": "^2.1.1"
+  },
+  "dependencies": {}
+}
