@@ -4,9 +4,9 @@ import json
 from ...models import Region, Departement, Commune, CodePostal
 import time
 
-URL_REGIONS  = 'https://geo.api.gouv.fr/regions'
-URL_DPTS     = 'https://geo.api.gouv.fr/departements'
-URL_COMMUNES = 'https://geo.api.gouv.fr/communes?fields=nom,code,codesPostaux,codeDepartement,population'
+URL_REGIONS  = 'https://geo.api.gouv.fr/regions?zone=metro,drom,com'
+URL_DPTS     = 'https://geo.api.gouv.fr/departements?zone=metro,drom,com'
+URL_COMMUNES = 'https://geo.api.gouv.fr/communes?zone=metro,drom,com&fields=nom,code,codesPostaux,codeDepartement,population'
 
 class Command(BaseCommand):
     help = "Importe les villes/départements/régions depuis le site du gouvernement dans la BDD."
